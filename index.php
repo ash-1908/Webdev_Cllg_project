@@ -32,21 +32,24 @@
             <tbody>
         <?php
         require_once('config.php');
-        $sql = "____15____";//Select users and order by id in ascending order
-        $result = ____16____($sql);
+        $sql = "SELECT * FROM users ORDER BY id";//Select users and order by id in ascending order
+        $result = $mysqli->query($sql);
 
         if($result->num_rows > 0){
             //Output Data of Each Row
-            while($row = ____17____){
+            while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['name'] . "</td>";
                 echo "<td>" . $row['age'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
-                echo "<td><button style='width:70px;'><a href='____18____'>Edit</a></button> | 
+                echo "<td><button style='width:70px;'><a href='____edit.php____'>Edit</a></button> | 
                 <button style='width:70px;'><a href='delete.php?id=$row[id]' onClick='____19____'>Delete</a></button></td>";     
                 echo "</tr>";
             }
+        }
+        else{
+            echo "No row to display";
         }
         ?>
         </tbody>

@@ -13,18 +13,18 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Your name</label>
-                            <input type="text" class="form-control" name="____2____" required placeholder=" Enter Name">
+                            <input type="text" class="form-control" name="name" required placeholder=" Enter Name">
                         </div>
                         <div class="form-group">
                             <label>Age</label>
-                            <input type="number" min=0 max=150 class="form-control" name="____3____" required placeholder=" Enter Age" required>
+                            <input type="number" min=0 max=150 class="form-control" name="age" required placeholder=" Enter Age" required>
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" class="form-control" name="____4____" placeholder=" Enter Email id">
+                            <input type="email" class="form-control" name="mail" placeholder=" Enter Email id">
                         </div>  
                         <div>
-                            <input type="submit" class="btn btn-default submit" name='____5____' value="submit"></button>
+                            <input type="submit" class="btn btn-default submit" name='submit' value="submit"></button>
                         </div>
                     </div>
                 </form>

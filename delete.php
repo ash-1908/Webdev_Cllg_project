@@ -3,12 +3,17 @@
 require_once("config.php");
  
 //get id of the record from url using supergloabl variable $_GET['id']
-$id = ____29____;
+$id = $_POST['id'];
  
 //deleting the row from table
-$sql = "____21____";
-$result = ____22____;
-
+$sql = "DELETE * FROM users WHERE id = '$id'";
+$result = $mysqli->query($sql);
+if($result){
+    echo "deleted successfully";
+}
+else{
+    echo "Unable to delete";
+}
 //redirecting to the home page (index.php in our case)
-header("____23____");
+header("LOCATION : index.php");
 ?>

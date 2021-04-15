@@ -10,19 +10,28 @@
             th{
                 border: dashed 1px;
                 text-align: left;
+                width: 200px;
             }
             td{
                 border: dashed 1px;
                 width: 200px;
                 text-align: left;
             }
+            #add_user{
+                border: none;
+            }
         </style>
     </head>
     <body>
         <table>
             <thead>
+            <tr>
+                <th id= "add_user">
+                    <a href= "addRecord.php">Add user</a>
+                </th>
+            </tr>
                 <tr>
-                    <th>ID</th>
+                    <th>Id</th>
                     <th>Name</th>
                     <th>Age</th>
                     <th>Email</th>
@@ -47,9 +56,6 @@
                 <button style='width:70px;'><a href='delete.php?id=$row[id]' onClick='____19____'>Delete</a></button></td>";     
                 echo "</tr>";
             }
-        }
-        else{
-            echo "No row to display";
         }
         ?>
         </tbody>

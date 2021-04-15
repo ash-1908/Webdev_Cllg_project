@@ -48,12 +48,12 @@
             //Output Data of Each Row
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['age'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td><button style='width:70px;'><a href='____edit.php____'>Edit</a></button> | 
-                <button style='width:70px;'><a href='delete.php?id=$row[id]' onClick='____19____'>Delete</a></button></td>";     
+                echo "<td>" . $row['Id'] . "</td>";
+                echo "<td>" . $row['Name'] . "</td>";
+                echo "<td>" . $row['Age'] . "</td>";
+                echo "<td>" . $row['Email'] . "</td>";
+                echo "<td><button style='width:70px;'><a href='edit.php'>Edit</a></button> | 
+                <button style='width:70px;'><a href='delete.php?id=$row[id]' onClick='window.location.reload()'>Delete</a></button></td>";     
                 echo "</tr>";
             }
         }

@@ -53,7 +53,7 @@
                 echo "<td>" . $row['Age'] . "</td>";
                 echo "<td>" . $row['Email'] . "</td>";
                 echo "<td><button name = 'edit' style='width:70px;'><a href='edit.php?id=$row[Id]'>Edit</a></button> | 
-                <button name='delete' style='width:70px;'><a href='delete.php?id=$row[Id]' onClick='window.location.reload()'>Delete</a></button></td>";     
+                <button name='delete' style='width:70px;'><a href='delete.php?id=$row[Id]'>Delete</a></button></td>";     
                 echo "</tr>";
             }
         }

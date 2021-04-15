@@ -9,6 +9,5 @@ $mysqli = new mysqli($databaseHost, $databaseUserName, $databasePassword, $datab
 if($mysqli->connect_error){
 	die('Connection Failed - ' . $mysqli->connect_error);
 }
-echo "Connected successfully.";
 //Above connection can be made in procedural way as well.
 ?>

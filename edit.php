@@ -3,12 +3,12 @@
 include_once("config.php");
 include_once('common.php');
  
-if(isset($_POST['____24____']))
+if(isset($_POST['update']))
 {    
-    ____25____ = $_POST['id'];
-    ____26____ = $_POST['name'];
-    ____27____ = $_POST['age'];
-    ____28____ = $_POST['email'];    
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];    
     
     // checking empty fields
     if(empty($name) || empty($age) || empty($email)){
@@ -16,8 +16,8 @@ if(isset($_POST['____24____']))
     } 
     else {    
         //updating the table
-        $sql = "UPDATE users ____29____";
-        $result = ____30____;
+        $sql = "UPDATE users SET Name = '$name', Age = '$age', Email = '$email'";
+        $result = $mysqli->query($sql);
         //redirectig to the home page. In our case, it is index.php
         header("Location: index.php");
     }
@@ -26,17 +26,17 @@ if(isset($_POST['____24____']))
 
 <?php
 //getting id from url
-$id = ____31____;
+$id = $_GET['id'];
 
 //selecting data associated with this particular id
-$sql = "SELECT * ____32____";
-$result = $mysqli____33____;
+$sql = "SELECT * FROM users WHERE Id = '$id'";
+$result = $mysqli->query($sql);
  
-while($row = ____34____->fetch_array())
+while($row = $result->fetch_array())
 {
-    $name = ____35____;
-    $age = ____36____;
-    $email = ____37____;
+    $name = $row['Name'];
+    $age = $row['Age'];
+    $email = $row['Email'];
 }
 ?>
 <html>
@@ -55,18 +55,18 @@ while($row = ____34____->fetch_array())
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Your name</label>
-                        <input type="text" class="form-control" name="name" value="____38____" required>
+                        <input type="text" class="form-control" name="name" value="<?php echo $name;?>" required>
                     </div>
                     <div class="form-group">
                         <label>Age</label>
-                        <input type="number" min=0 max=150 class="form-control" name="age" value="____39____" required>
+                        <input type="number" min=0 max=150 class="form-control" name="age" value="<?php echo $age;?>" required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" class="form-control" name="email" value="____40____" required>
+                        <input type="email" class="form-control" name="email" value="<?php echo $email;?>" required>
                     </div>  
                     <div>
-                        <input type="hidden" name="id" value=<?php echo ____41____;?>><!-- Why This hidden ID field is needed??-->
+                        <input type="hidden" name="id" value=<?php echo $id;?>><!-- Why This hidden ID field is needed??-->
                         <input type="submit" class="btn btn-default submit fa fa-paper-plane" name='update' value="update">
                     </div>
                 </div>

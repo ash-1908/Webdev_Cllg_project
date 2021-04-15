@@ -52,8 +52,8 @@
                 echo "<td>" . $row['Name'] . "</td>";
                 echo "<td>" . $row['Age'] . "</td>";
                 echo "<td>" . $row['Email'] . "</td>";
-                echo "<td><button style='width:70px;'><a href='edit.php'>Edit</a></button> | 
-                <button style='width:70px;'><a href='delete.php?id=$row[id]' onClick='window.location.reload()'>Delete</a></button></td>";     
+                echo "<td><button style='width:70px;'><a href='edit.php?id=$row[Id]'>Edit</a></button> | 
+                <button style='width:70px;'><a href='delete.php?id=$row[Id]' onClick='window.location.reload()'>Delete</a></button></td>";     
                 echo "</tr>";
             }
         }
